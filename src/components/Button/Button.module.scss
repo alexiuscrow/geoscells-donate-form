@@ -1,0 +1,100 @@
+@import '../../styles/variables';
+
+.button {
+  background-color: $colorGeoGreen;
+  border: 0;
+  color: $colorSolidWhite;
+  border-radius: $borderRadius;
+  cursor: pointer;
+  text-transform: lowercase;
+  font-family: 'Gilroy', 'sans-serif';
+  font-style: normal;
+  font-weight: $fwRegular;
+  font-size: 18px;
+  line-height: 21px;
+
+  &:hover {
+    background-color: $colorGeoGreenHover;
+  }
+
+  &:disabled {
+    background-color: $colorAltBlack;
+    color: $colorGeoGray;
+  }
+
+  &.red {
+    background-color: $colorGeoRed;
+
+    &:hover {
+      background-color: $colorGeoRedHover;
+    }
+  }
+
+  &.smSize {
+    width: 155px;
+    height: 35px;
+    font-size: 14px;
+    line-height: 16px;
+
+    @media (min-width: map-get($newBreakpoints, 'tablet')) {
+      width: 191px;
+      height: 60px;
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    @media (min-width: map-get($newBreakpoints, 'desktop1')) {
+      width: 160px;
+      height: 60px;
+    }
+
+    @media (min-width: map-get($newBreakpoints, 'desktop2')) {
+      min-width: 247px;
+      height: 107px;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &.mdSize {
+    width: 170px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 14px;
+
+    @media (min-width: map-get($newBreakpoints, 'tablet')) {
+      width: 245px;
+      height: 60px;
+      font-size: 18px;
+      line-height: 21px;
+    }
+
+    @media (min-width: map-get($newBreakpoints, 'desktop2')) {
+      width: 275px;
+      height: 62px;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &.lgSize {
+    width: 190px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 21px;
+
+    @media (min-width: map-get($newBreakpoints, 'tablet')) {
+      width: 245px;
+      height: 60px;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    @media (min-width: map-get($newBreakpoints, 'desktop2')) {
+      width: 365px;
+      height: 100px;
+      font-size: 32px;
+      line-height: 38px;
+    }
+  }
+}

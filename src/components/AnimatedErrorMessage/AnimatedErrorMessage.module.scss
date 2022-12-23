@@ -1,0 +1,7 @@
+@use '../../styles/variables';
+
+.errorMessage {
+  font-weight: variables.$fwRegular;
+  color: variables.$colorGeoRed;
+  line-height: initial;
+}

@@ -1,0 +1,62 @@
+@import 'functions';
+
+// Fonts
+$fontFamily: 'Inter', sans-serif;
+$fwRegular: 400;
+
+// New colors
+$colorBlack: #0e1113;
+$colorAltBlack: #14231f;
+$colorGeoGray: #5e5e5e;
+$colorSolidWhite: #f8f8f8;
+$colorGeoGreen: #3dc4b1;
+$colorGeoGreenHover: #28766b;
+$colorGeoRed: #ff4673;
+$colorGeoRedHover: #9a2d47;
+
+// Colors // Deprecated
+$color1: #151c1f;
+
+// Other
+$borderRadius: 10px;
+$newBreakpoints: (
+  mobile: 320px,
+  tablet: 768px,
+  desktop1: 1280px,
+  desktop2: 1920px
+);
+$margins: (
+  mobile: (
+    1: 42px,
+    2: 32px,
+    3: 26px,
+    4: 16px,
+    5: 10px,
+    6: 5px
+  ),
+  tablet: (
+    1: 72px,
+    2: 56px,
+    3: 38px,
+    4: 22px,
+    5: 16px,
+    6: 10px
+  ),
+  desktop1: (
+    1: 110px,
+    2: 82px,
+    3: 42px,
+    4: 24px,
+    5: 16px,
+    6: 10px
+  ),
+  desktop2: (
+    1: 216px,
+    2: 170px,
+    3: 120px,
+    4: 46px,
+    5: 28px,
+    6: 16px
+  )
+);
+

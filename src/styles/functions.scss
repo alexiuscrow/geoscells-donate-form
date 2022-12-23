@@ -1,0 +1,38 @@
+@use 'sass:math';
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+@mixin cardSizeMixin($breakpointToCardWidthMap) {
+  @each $breakpoint, $cardWidth in $breakpointToCardWidthMap {
+    @media (min-width: $breakpoint) {
+      height: math.div($cardWidth, 1.5858);
+      width: $cardWidth;
+    }
+  }
+}
+
+@function cardSize($minBreakpoint, $minCardWidth, $maxBreakpoint, $maxCardSize, $stepBreakpoint) {
+  $percent: math.div(($maxBreakpoint - $minBreakpoint), $stepBreakpoint);
+
+  $cardWidthPerStep: math.div(($maxCardSize - $minCardWidth), $percent);
+  $breakpointLength: math.floor($percent);
+  $breakpointToCardWidthMap: ();
+
+  @for $i from 0 to $breakpointLength {
+    $breakpoint: $minBreakpoint + $stepBreakpoint * ($i + 1);
+    $cardWidth: $minCardWidth + $cardWidthPerStep * ($i + 1);
+    $breakpointToCardWidthMap: map-merge(
+      $breakpointToCardWidthMap,
+      (
+        $breakpoint: math.floor($cardWidth)
+      )
+    );
+  }
+
+  @return $breakpointToCardWidthMap;
+}
