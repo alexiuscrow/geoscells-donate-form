@@ -48,24 +48,25 @@ i18next
             currencySign: '₴',
             donateButton: 'Підтримати'
           },
-          'validationMessages': {
-            tooShort: 'Too short',
-            tooLong: 'Too long',
-            required: 'This field is marked as required',
-            positive: 'The value should be positive',
-            invalidEmail: 'Invalid email',
+          validationMessages: {
+            tooShort: 'Закоротке значення',
+            tooLong: 'Завелике значення',
+            required: 'Це поле є обовʼязковим',
+            positive: 'Значення повинно бути додатнім',
+            invalidEmail: 'Недійсний email',
             paymentInputs: {
-              emptyCardNumber: 'This field is marked as required',
-              invalidCardNumber: 'Invalid card number',
-              emptyExpiryDate: 'This field is marked as required',
-              monthOutOfRange: 'The expiration month must be between 01 and 12',
-              yearOutOfRange: 'Expiration year cannot be in the past',
-              dateOutOfRange: 'The expiration date cannot be in the past',
-              invalidExpiryDate: 'The expiration date is invalid',
-              emptyCVC: 'This field is marked as required',
-              invalidCVC: 'The security code is invalid'
+              emptyCardNumber: 'Це поле є обовʼязковим',
+              invalidCardNumber: 'Недійсний номер картки',
+              emptyExpiryDate: 'Це поле є обовʼязковим',
+              monthOutOfRange: 'Місяць закінчення має бути між 01 і 12',
+              yearOutOfRange: 'Рік закінчення терміну дії не може бути в минулому',
+              dateOutOfRange: 'Дата закінчення терміну дії не може бути в минулому',
+              invalidExpiryDate: 'Дата закінчення терміну дії недійсна',
+              emptyCVC: 'Це поле є обовʼязковим',
+              invalidCVC: 'Недійсний rод безпеки'
             }
           }
+
         }
       },
       en: {
@@ -100,21 +101,21 @@ i18next
           }
         },
         validationMessages: {
-          tooShort: 'Закоротке значення',
-          tooLong: 'Завелике значення',
-          required: 'Це поле є обовʼязковим',
-          positive: 'Значення повинно бути додатнім',
-          invalidEmail: 'Недійсний email',
+          tooShort: 'Too short',
+          tooLong: 'Too long',
+          required: 'This field is marked as required',
+          positive: 'The value should be positive',
+          invalidEmail: 'Invalid email',
           paymentInputs: {
-            emptyCardNumber: 'Це поле є обовʼязковим',
-            invalidCardNumber: 'Недійсний номер картки',
-            emptyExpiryDate: 'Це поле є обовʼязковим',
-            monthOutOfRange: 'Місяць закінчення має бути між 01 і 12',
-            yearOutOfRange: 'Рік закінчення терміну дії не може бути в минулому',
-            dateOutOfRange: 'Дата закінчення терміну дії не може бути в минулому',
-            invalidExpiryDate: 'Дата закінчення терміну дії недійсна',
-            emptyCVC: 'Це поле є обовʼязковим',
-            invalidCVC: 'Недійсний rод безпеки'
+            emptyCardNumber: 'This field is marked as required',
+            invalidCardNumber: 'Invalid card number',
+            emptyExpiryDate: 'This field is marked as required',
+            monthOutOfRange: 'The expiration month must be between 01 and 12',
+            yearOutOfRange: 'Expiration year cannot be in the past',
+            dateOutOfRange: 'The expiration date cannot be in the past',
+            invalidExpiryDate: 'The expiration date is invalid',
+            emptyCVC: 'This field is marked as required',
+            invalidCVC: 'The security code is invalid'
           }
         }
       }
