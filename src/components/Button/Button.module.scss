@@ -13,21 +13,22 @@
   font-size: 18px;
   line-height: 21px;
 
-  &:hover {
+  &:not([disabled]):hover {
     background-color: $colorGeoGreenHover;
   }
 
-  &:disabled {
-    background-color: $colorAltBlack;
-    color: $colorGeoGray;
-  }
-
-  &.red {
+  &:not([disabled]).red {
     background-color: $colorGeoRed;
 
     &:hover {
       background-color: $colorGeoRedHover;
     }
+  }
+
+  &:disabled {
+    background-color: $colorAltBlack;
+    color: $colorGeoGray;
+    cursor: progress;
   }
 
   &.smSize {
