@@ -1,33 +1,34 @@
-@import '../../styles/variables';
+@use 'sass:map';
+@use '../../styles/variables';
 
 .button {
-  background-color: $colorGeoGreen;
+  background-color: variables.$colorGeoGreen;
   border: 0;
-  color: $colorSolidWhite;
-  border-radius: $borderRadius;
+  color: variables.$colorSolidWhite;
+  border-radius: variables.$borderRadius;
   cursor: pointer;
   text-transform: lowercase;
   font-family: 'Gilroy', 'sans-serif';
   font-style: normal;
-  font-weight: $fwRegular;
+  font-weight: variables.$fwRegular;
   font-size: 18px;
   line-height: 21px;
 
   &:not([disabled]):hover {
-    background-color: $colorGeoGreenHover;
+    background-color: variables.$colorGeoGreenHover;
   }
 
   &:not([disabled]).red {
-    background-color: $colorGeoRed;
+    background-color: variables.$colorGeoRed;
 
     &:hover {
-      background-color: $colorGeoRedHover;
+      background-color: variables.$colorGeoRedHover;
     }
   }
 
   &:disabled {
-    background-color: $colorAltBlack;
-    color: $colorGeoGray;
+    background-color: variables.$colorAltBlack;
+    color: variables.$colorGeoGray;
     cursor: progress;
   }
 
@@ -37,19 +38,19 @@
     font-size: 14px;
     line-height: 16px;
 
-    @media (min-width: map-get($newBreakpoints, 'tablet')) {
+    @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
       width: 191px;
       height: 60px;
       font-size: 16px;
       line-height: 19px;
     }
 
-    @media (min-width: map-get($newBreakpoints, 'desktop1')) {
+    @media (min-width: map.get(variables.$newBreakpoints, 'desktop1')) {
       width: 160px;
       height: 60px;
     }
 
-    @media (min-width: map-get($newBreakpoints, 'desktop2')) {
+    @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
       min-width: 247px;
       height: 107px;
       font-size: 20px;
@@ -63,14 +64,14 @@
     font-size: 12px;
     line-height: 14px;
 
-    @media (min-width: map-get($newBreakpoints, 'tablet')) {
+    @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
       width: 245px;
       height: 60px;
       font-size: 18px;
       line-height: 21px;
     }
 
-    @media (min-width: map-get($newBreakpoints, 'desktop2')) {
+    @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
       width: 275px;
       height: 62px;
       font-size: 20px;
@@ -84,14 +85,14 @@
     font-size: 18px;
     line-height: 21px;
 
-    @media (min-width: map-get($newBreakpoints, 'tablet')) {
+    @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
       width: 245px;
       height: 60px;
       font-size: 24px;
       line-height: 28px;
     }
 
-    @media (min-width: map-get($newBreakpoints, 'desktop2')) {
+    @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
       width: 365px;
       height: 100px;
       font-size: 32px;

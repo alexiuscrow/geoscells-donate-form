@@ -1,8 +1,9 @@
+@use 'sass:map';
 @use 'sass:math';
 
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
-    $map: map-get($map, $key);
+    $map: map.get($map, $key);
   }
   @return $map;
 }
@@ -26,11 +27,11 @@
   @for $i from 0 to $breakpointLength {
     $breakpoint: $minBreakpoint + $stepBreakpoint * ($i + 1);
     $cardWidth: $minCardWidth + $cardWidthPerStep * ($i + 1);
-    $breakpointToCardWidthMap: map-merge(
-      $breakpointToCardWidthMap,
-      (
-        $breakpoint: math.floor($cardWidth)
-      )
+    $breakpointToCardWidthMap: map.merge(
+        $breakpointToCardWidthMap,
+        (
+          $breakpoint: math.floor($cardWidth)
+        )
     );
   }
 

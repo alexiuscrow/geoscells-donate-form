@@ -1,60 +1,62 @@
-@import 'variables';
-@import '../styles/functions';
-@import '../styles/fonts';
+@use 'sass:map';
+@use 'variables';
+@use '../styles/functions';
+@use '../styles/fonts';
 
 *,
 body {
   margin: 0;
-  font-family: $fontFamily;
+  font-family: variables.$fontFamily;
   box-sizing: border-box;
-  color: $colorSolidWhite;
+  color: variables.$colorSolidWhite;
   line-height: 1.7em;
 
   &:focus-visible {
-    outline: $colorGeoGreen solid medium;
+    outline: variables.$colorGeoGreen solid medium;
   }
 }
 
 body {
-  background: $color1 linear-gradient(#0e1113, $color1);
+  background: variables.$color1 linear-gradient(#0e1113, variables.$color1);
   overflow-x: hidden;
 }
 
 ::selection {
-  background: $colorGeoGreen;
-  color: $colorSolidWhite;
+  background: variables.$colorGeoGreen;
+  color: variables.$colorSolidWhite;
 }
+
 a {
   & > svg {
-    fill: $colorSolidWhite;
+    fill: variables.$colorSolidWhite;
   }
 }
 
 input {
   background-color: #d9d9d9;
   border: 1px solid #14231f;
-  border-radius: $borderRadius;
+  border-radius: variables.$borderRadius;
   cursor: text;
   font-family: 'Gilroy', 'sans-serif';
   font-style: normal;
-  font-weight: $fwRegular;
+  font-weight: variables.$fwRegular;
   font-size: 14px;
   line-height: 38px;
   height: 36px;
   padding: 0 16px;
-  color: $colorGeoGray;
+  color: variables.$colorGeoGray;
 
   &::placeholder {
     color: #c2c2c2;
   }
 
-  @media (min-width: map-get($newBreakpoints, 'tablet')) {
+  @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
     line-height: 165%;
     height: 60px;
     padding: 0 32px;
   }
 
-  @media (min-width: map-get($newBreakpoints, 'desktop2')) {
+  @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
     font-size: 22px;
     height: 100px;
     padding: 0 46px;
