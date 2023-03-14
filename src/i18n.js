@@ -45,7 +45,7 @@ i18next
               label: 'Код безпеки',
               inputPlaceholder: 'XXX'
             },
-            currencySign: '₴',
+            currencySign: '$',
             donateButton: 'Підтримати'
           },
           validationMessages: {
