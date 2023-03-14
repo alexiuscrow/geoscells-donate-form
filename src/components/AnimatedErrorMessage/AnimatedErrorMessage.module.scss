@@ -1,7 +1,19 @@
+@use 'sass:map';
 @use '../../styles/variables';
+@use '../../styles/functions';
 
 .errorMessage {
   font-weight: variables.$fwRegular;
   color: variables.$colorGeoRed;
-  line-height: initial;
+  position: absolute;
+  top: 38px;
+  line-height: 96%;
+
+  @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
+    top: 64px;
+  }
+
+  @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
+    top: 104px;
+  }
 }

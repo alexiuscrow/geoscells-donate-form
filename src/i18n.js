@@ -46,7 +46,8 @@ i18next
               inputPlaceholder: 'XXX'
             },
             currencySign: '$',
-            donateButton: 'Підтримати'
+            donateButton: 'Підтримати',
+            loadingButton: 'Обробка'
           },
           validationMessages: {
             tooShort: 'Закоротке значення',
@@ -65,8 +66,18 @@ i18next
               emptyCVC: 'Це поле є обовʼязковим',
               invalidCVC: 'Недійсний rод безпеки'
             }
+          },
+          paymentResult: {
+            paymentIdTitle: 'Ідентифікатор платежу:',
+            success: {
+              title: 'Платіж надіслано',
+              buttonTitle: 'Повернутись до форми'
+            },
+            error: {
+              title: 'Не вдалося здійснити платіж',
+              buttonTitle: 'Повернутись до форми'
+            }
           }
-
         }
       },
       en: {
@@ -97,7 +108,8 @@ i18next
               inputPlaceholder: 'XXX'
             },
             currencySign: '$',
-            donateButton: 'Donate'
+            donateButton: 'Donate',
+            loadingButton: 'Processing'
           }
         },
         validationMessages: {
@@ -116,6 +128,17 @@ i18next
             invalidExpiryDate: 'The expiration date is invalid',
             emptyCVC: 'This field is marked as required',
             invalidCVC: 'The security code is invalid'
+          }
+        },
+        paymentResult: {
+          paymentIdTitle: 'Payment ID:',
+          success: {
+            title: 'Payment sent',
+            buttonTitle: 'Back to form'
+          },
+          error: {
+            title: 'Payment failed',
+            buttonTitle: 'Back to form'
           }
         }
       }

@@ -2,8 +2,14 @@
 @use '../../styles/variables';
 @use '../../styles/functions';
 
-.form {
+.container {
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
 
   @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
     width: 496px;
@@ -11,244 +17,258 @@
 
   @media (min-width: map.get(variables.$newBreakpoints, 'desktop1')) {
     width: 1040px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: min-content 1fr;
-    grid-column-gap: 62px;
   }
 
   @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
-    grid-column-gap: 86px;
     width: 1520px;
   }
 
-  .fieldsWrapper {
-    padding-bottom: functions.map-deep-get(variables.$margins, 'mobile', 2);
+  .animatedContentWrapper {
+    width: 100%;
+    position: absolute;
+  }
 
-    @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
-      padding-bottom: functions.map-deep-get(variables.$margins, 'tablet', 2);
+  .form {
+    width: 100%;
+
+    @media (min-width: map.get(variables.$newBreakpoints, 'desktop1')) {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(8, auto);
-      grid-column-gap: functions.map-deep-get(variables.$margins, 'tablet', 5);
-      grid-auto-flow: column;
-    }
-
-    @media (min-width: map.get(variables.$newBreakpoints, 'desktop1')) {
-      padding-bottom: 0;
-      grid-column-gap: functions.map-deep-get(variables.$margins, 'desktop1', 5);
-      grid-column: 1 / 2;
-      grid-row: 1 / 3;
+      grid-template-rows: min-content 1fr;
+      grid-column-gap: 62px;
     }
 
     @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
-      grid-column-gap: functions.map-deep-get(variables.$margins, 'desktop2', 5);
+      grid-column-gap: 86px;
     }
 
-    & > * {
-      grid-column: 1 / 3;
-
-      &.leftSideField {
-        grid-column: 1 / 2;
-      }
-
-      &.rightSideField {
-        grid-column: 2 / 3;
-      }
-    }
-
-    label {
-      padding-bottom: functions.map-deep-get(variables.$margins, 'mobile', 6);
-      font-family: 'Gilroy', 'sans-serif';
-      font-style: normal;
-      font-weight: variables.$fwRegular;
-      font-size: 10px;
-      line-height: 100%;
+    .fieldsWrapper {
+      padding-bottom: functions.map-deep-get(variables.$margins, 'mobile', 2);
 
       @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
-        padding-bottom: functions.map-deep-get(variables.$margins, 'tablet', 6);
-        font-size: 16px;
-        line-height: 165%;
+        padding-bottom: functions.map-deep-get(variables.$margins, 'tablet', 2);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(8, auto);
+        grid-column-gap: functions.map-deep-get(variables.$margins, 'tablet', 5);
+        grid-auto-flow: column;
       }
 
       @media (min-width: map.get(variables.$newBreakpoints, 'desktop1')) {
-        padding-bottom: functions.map-deep-get(variables.$margins, 'desktop1', 6);
-      }
-
-      @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
-        padding-bottom: functions.map-deep-get(variables.$margins, 'desktop2', 6);
-        font-size: 26px;
-      }
-    }
-
-    .fieldWrapper {
-      display: flex;
-      flex-direction: column;
-      gap: functions.map-deep-get(variables.$margins, 'mobile', 6);
-      padding-bottom: functions.map-deep-get(variables.$margins, 'mobile', 5);
-
-      &:last-child {
         padding-bottom: 0;
-      }
-
-      @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
-        gap: functions.map-deep-get(variables.$margins, 'tablet', 6);
-        padding-bottom: functions.map-deep-get(variables.$margins, 'tablet', 5);
-      }
-
-      @media (min-width: map.get(variables.$newBreakpoints, 'desktop1')) {
-        gap: functions.map-deep-get(variables.$margins, 'desktop1', 6);
-        padding-bottom: functions.map-deep-get(variables.$margins, 'desktop1', 4);
+        grid-column-gap: functions.map-deep-get(variables.$margins, 'desktop1', 5);
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
       }
 
       @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
-        gap: functions.map-deep-get(variables.$margins, 'desktop2', 6);
-        padding-bottom: functions.map-deep-get(variables.$margins, 'desktop2', 5);
+        grid-column-gap: functions.map-deep-get(variables.$margins, 'desktop2', 5);
       }
 
-      .inputWithIcon {
-        padding-left: 30px;
-        background-position-x: 11px;
-        background-position-y: center;
-        background-size: 11px;
-        background-repeat: no-repeat;
-        background-color: variables.$colorSolidWhite;
+      & > * {
+        grid-column: 1 / 3;
+
+        &.leftSideField {
+          grid-column: 1 / 2;
+        }
+
+        &.rightSideField {
+          grid-column: 2 / 3;
+        }
+      }
+
+      label {
+        padding-bottom: functions.map-deep-get(variables.$margins, 'mobile', 6);
+        font-family: 'Gilroy', 'sans-serif';
+        font-style: normal;
+        font-weight: variables.$fwRegular;
+        font-size: 10px;
+        line-height: 100%;
 
         @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
-          padding-left: 52px;
+          padding-bottom: functions.map-deep-get(variables.$margins, 'tablet', 6);
+          font-size: 16px;
+          line-height: 165%;
+        }
+
+        @media (min-width: map.get(variables.$newBreakpoints, 'desktop1')) {
+          padding-bottom: functions.map-deep-get(variables.$margins, 'desktop1', 6);
         }
 
         @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
-          padding-left: 76px;
+          padding-bottom: functions.map-deep-get(variables.$margins, 'desktop2', 6);
+          font-size: 26px;
         }
       }
 
-      .inputName {
-        @extend .inputWithIcon;
-        background-image: url('./input-icons/person.svg');
-        background-position-x: 11px;
-        background-size: 8px;
+      .fieldWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: functions.map-deep-get(variables.$margins, 'mobile', 6);
+        padding-bottom: functions.map-deep-get(variables.$margins, 'mobile', 5);
+        position: relative;
+
+        &:last-child {
+          padding-bottom: 0;
+        }
 
         @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
-          background-position-x: 22px;
-          background-size: 14px;
+          gap: functions.map-deep-get(variables.$margins, 'tablet', 6);
+          padding-bottom: functions.map-deep-get(variables.$margins, 'tablet', 5);
+        }
+
+        @media (min-width: map.get(variables.$newBreakpoints, 'desktop1')) {
+          gap: functions.map-deep-get(variables.$margins, 'desktop1', 6);
+          padding-bottom: functions.map-deep-get(variables.$margins, 'desktop1', 4);
         }
 
         @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
-          background-position-x: 32px;
-          background-size: 20px;
-        }
-      }
-
-      .inputEmail {
-        @extend .inputWithIcon;
-        background-image: url('./input-icons/email.svg');
-        background-position-x: 10px;
-        background-size: 11px;
-
-        @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
-          background-position-x: 20px;
-          background-size: 20px;
+          gap: functions.map-deep-get(variables.$margins, 'desktop2', 6);
+          padding-bottom: functions.map-deep-get(variables.$margins, 'desktop2', 5);
         }
 
-        @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
-          background-position-x: 28px;
-          background-size: 28px;
-        }
-      }
-
-      .inputAmount {
-        @extend .inputWithIcon;
-        background-image: url('./input-icons/currency.svg');
-        background-position-x: 12px;
-        background-size: 7px;
-
-        @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
-          background-position-x: 23px;
+        .inputWithIcon {
+          padding-left: 30px;
+          background-position-x: 11px;
+          background-position-y: center;
           background-size: 11px;
+          background-repeat: no-repeat;
+          background-color: variables.$colorSolidWhite;
+
+          @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
+            padding-left: 52px;
+          }
+
+          @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
+            padding-left: 76px;
+          }
         }
 
-        @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
-          background-position-x: 34px;
-          background-size: 16px;
+        .inputName {
+          @extend .inputWithIcon;
+          background-image: url('./icons/person.svg');
+          background-position-x: 11px;
+          background-size: 8px;
+
+          @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
+            background-position-x: 22px;
+            background-size: 14px;
+          }
+
+          @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
+            background-position-x: 32px;
+            background-size: 20px;
+          }
+        }
+
+        .inputEmail {
+          @extend .inputWithIcon;
+          background-image: url('./icons/email.svg');
+          background-position-x: 10px;
+          background-size: 11px;
+
+          @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
+            background-position-x: 20px;
+            background-size: 20px;
+          }
+
+          @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
+            background-position-x: 28px;
+            background-size: 28px;
+          }
+        }
+
+        .inputAmount {
+          @extend .inputWithIcon;
+          background-image: url('./icons/currency.svg');
+          background-position-x: 12px;
+          background-size: 7px;
+
+          @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
+            background-position-x: 23px;
+            background-size: 11px;
+          }
+
+          @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
+            background-position-x: 34px;
+            background-size: 16px;
+          }
+        }
+
+        .inputCard {
+          @extend .inputWithIcon;
+          background-image: url('./icons/card.svg');
+          background-position-x: 10px;
+          background-size: 11px;
+
+          @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
+            background-position-x: 20px;
+            background-size: 20px;
+          }
+
+          @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
+            background-position-x: 28px;
+            background-size: 28px;
+          }
         }
       }
 
-      .inputCard {
-        @extend .inputWithIcon;
-        background-image: url('./input-icons/card.svg');
-        background-position-x: 10px;
-        background-size: 11px;
+      .errorMessage {
+        font-family: 'Gilroy', 'sans-serif';
+        font-style: normal;
+        font-weight: variables.$fwRegular;
+        font-size: 12px;
 
         @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
-          background-position-x: 20px;
-          background-size: 20px;
+          font-size: 16px;
         }
 
         @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
-          background-position-x: 28px;
-          background-size: 28px;
+          font-size: 20px;
         }
       }
     }
 
-    .errorMessage {
-      font-family: 'Gilroy', 'sans-serif';
-      font-style: normal;
-      font-weight: variables.$fwRegular;
-      font-size: 10px;
-      line-height: 100%;
+    .cardWrapper {
+      padding-bottom: functions.map-deep-get(variables.$margins, 'mobile', 3);
 
       @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
-        font-size: 16px;
-        line-height: 165%;
+        padding-bottom: functions.map-deep-get(variables.$margins, 'tablet', 3);
       }
 
-      @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
-        font-size: 26px;
-      }
-    }
-  }
-
-  .cardWrapper {
-    padding-bottom: functions.map-deep-get(variables.$margins, 'mobile', 3);
-
-    @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
-      padding-bottom: functions.map-deep-get(variables.$margins, 'tablet', 3);
-    }
-
-    @media (min-width: map.get(variables.$newBreakpoints, 'desktop1')) {
-      grid-column: 2 / 3;
-      grid-row: 1 / 2;
-      padding-top: 36px;
-      padding-bottom: 60px;
-    }
-
-    @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
-      padding-top: 59px;
-      padding-bottom: 86px;
-    }
-  }
-
-  .buttonWrapper {
-    display: flex;
-    justify-content: center;
-
-    @media (min-width: map.get(variables.$newBreakpoints, 'desktop1')) {
-      justify-content: right;
-      grid-column: 2 / 3;
-      grid-row: 2 / 3;
-      align-items: flex-end;
-    }
-
-    .button {
       @media (min-width: map.get(variables.$newBreakpoints, 'desktop1')) {
-        margin-bottom: functions.map-deep-get(variables.$margins, 'desktop1', 4);
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        padding-top: 36px;
+        padding-bottom: 60px;
       }
 
       @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
-        height: 100px;
-        margin-bottom: functions.map-deep-get(variables.$margins, 'desktop2', 5);
+        padding-top: 59px;
+        padding-bottom: 86px;
+      }
+    }
+
+    .buttonWrapper {
+      display: flex;
+      justify-content: center;
+
+      @media (min-width: map.get(variables.$newBreakpoints, 'desktop1')) {
+        justify-content: right;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        align-items: flex-end;
+      }
+
+      .button {
+        @media (min-width: map.get(variables.$newBreakpoints, 'desktop1')) {
+          margin-bottom: functions.map-deep-get(variables.$margins, 'desktop1', 4);
+        }
+
+        @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
+          height: 100px;
+          margin-bottom: functions.map-deep-get(variables.$margins, 'desktop2', 5);
+        }
       }
     }
   }

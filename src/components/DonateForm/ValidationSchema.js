@@ -2,6 +2,7 @@ import * as Yup from 'yup';
 
 const FormSchema = Yup.object().shape({
   name: Yup.string().min(2, 'tooShort').max(60, 'tooLong').required('required'),
+  email: Yup.string().email('invalidEmail').required('required'),
   amount: Yup.number().required('required').positive('positive').integer()
 });
 
