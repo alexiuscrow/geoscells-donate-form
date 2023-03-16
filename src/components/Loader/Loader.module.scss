@@ -1,6 +1,6 @@
 @use 'sass:map';
-@use '../../../../styles/variables';
-@use '../../../../styles/functions';
+@use '../../styles/variables';
+@use '../../styles/functions';
 
 @keyframes blur-text {
   0% {filter: blur(0px);}

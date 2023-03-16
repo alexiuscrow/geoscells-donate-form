@@ -6,12 +6,12 @@ import {ErrorMessage, Field, Form as FormikForm, useFormikContext} from 'formik'
 import AnimatedErrorMessage from '../../AnimatedErrorMessage';
 import classnames from 'classnames';
 import Button from '../../Button';
-import PaymentResultNotification from '../PaymentResultNotification';
+import PaymentResultNotification from './PaymentResultNotification';
 import {useCallback, useId, useState} from 'react';
 import CyrillicToTranslit from 'cyrillic-to-translit-js';
 import {useTranslation} from 'react-i18next';
 import './CreditCard.scss';
-import Loader from './Loader';
+import Loader from '../../Loader';
 import ApplePayButton from '../../ApplePayButton';
 import GooglePayButton from '../../GooglePayButton';
 import FakeService from '../../../FakeService';

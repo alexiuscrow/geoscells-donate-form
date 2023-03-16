@@ -3,7 +3,7 @@ import style from './PaymentResultNotification.module.scss';
 import {ReactComponent as SuccessIcon} from './icons/success.svg';
 import {ReactComponent as ErrorIcon} from './icons/error.svg';
 import {useTranslation} from 'react-i18next';
-import Button from '../../Button';
+import Button from '../../../Button';
 
 const PaymentResultNotification = ({paymentId, paymentStatus, secondaryInfo, onClickOk}) => {
   const {t} = useTranslation();
