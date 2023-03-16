@@ -1,7 +1,7 @@
 class FakeService {
-  static async makeRequest(data, minTimeoutSec = 1, maxTimeoutSec = 3) {
+  static async makeRequest(data, minTimeoutSec = 2, maxTimeoutSec = 3) {
     return new Promise((resolve, reject) => {
-      console.log('Processing data:', data);
+      console.log('Processing payment. Data:', data);
 
       const timeout = Math.floor((Math.random() * (maxTimeoutSec - minTimeoutSec + 1) + minTimeoutSec) * 1000);
 

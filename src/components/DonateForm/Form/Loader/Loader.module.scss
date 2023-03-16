@@ -1,0 +1,30 @@
+@use 'sass:map';
+@use '../../../../styles/variables';
+@use '../../../../styles/functions';
+
+@keyframes blur-text {
+  0% {filter: blur(0px);}
+  100% {filter: blur(4px);}
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  span {
+    text-transform: lowercase;
+    display: inline-block;
+    letter-spacing: 0.1em;
+    white-space: pre;
+    color: variables.$colorSolidWhite;
+    font-family: 'Gilroy', 'sans-serif';
+    @for $i from 0 through 1000 {
+      &:nth-child(#{$i + 1}) {
+        filter: blur(0px);
+        animation: blur-text 1s (#{$i/5})+s infinite linear alternate;
+      }
+    }
+  }
+}

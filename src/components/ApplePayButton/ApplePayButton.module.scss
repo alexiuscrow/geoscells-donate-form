@@ -1,0 +1,28 @@
+@use 'sass:map';
+@use '../../styles/variables';
+
+//noinspection ALL
+.container {
+  background-size: 100% 44%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  padding: 0;
+  box-sizing: border-box;
+  min-width: 60px;
+  min-height: 36px;
+  background-image: -webkit-named-image(apple-pay-logo-black);
+  background-color: white;
+  border-radius: variables.$borderRadius;
+  cursor: pointer;
+
+  @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
+    width: 100px;
+    height: 60px;
+  }
+
+  @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
+    background-size: 100% 25%;
+    height: 100px;
+    width: 100px;
+  }
+}

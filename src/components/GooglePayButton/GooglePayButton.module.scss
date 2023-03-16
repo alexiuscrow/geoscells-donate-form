@@ -1,0 +1,28 @@
+@use 'sass:map';
+@use '../../styles/variables';
+
+.container {
+
+  &, button {
+    background-size: auto 130%;
+    background-position: 50% 50%;
+    min-width: 60px;
+    min-height: 36px;
+
+    @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
+      width: 100px;
+      height: 60px;
+      background-size: auto 80%;
+    }
+
+    @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
+      height: 100px;
+      width: 100px;
+      background-size: 100% auto;
+    }
+  }
+
+  button {
+    border-radius: variables.$borderRadius;
+  }
+}

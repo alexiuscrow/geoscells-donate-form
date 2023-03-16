@@ -1,7 +1,7 @@
 @use 'sass:math';
 @use 'sass:map';
-@use '../../styles/variables';
-@use '../../styles/functions';
+@use '../../../styles/variables';
+@use '../../../styles/functions';
 
 $rccs-card-ratio: 1.7 !default;
 $rccs-card-ratio2: 1.585;

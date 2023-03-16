@@ -1,6 +1,6 @@
 @use 'sass:map';
-@use '../../styles/variables';
-@use '../../styles/functions';
+@use '../../../styles/variables';
+@use '../../../styles/functions';
 
 .container {
   width: 100%;
@@ -250,8 +250,33 @@
     }
 
     .buttonWrapper {
-      display: flex;
+      &, .applePayAndGooglePayButtonsGroup {
+        display: flex;
+        gap: functions.map-deep-get(variables.$margins, 'mobile', 5);
+
+        @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
+          gap: functions.map-deep-get(variables.$margins, 'tablet', 5);
+        }
+
+        @media (min-width: map.get(variables.$newBreakpoints, 'desktop1')) {
+          gap: functions.map-deep-get(variables.$margins, 'desktop1', 5);
+        }
+
+        @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
+          gap: functions.map-deep-get(variables.$margins, 'desktop2', 6);
+        }
+      }
+
       justify-content: center;
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;;
+      margin: 0 auto;
+
+      @media (min-width: map.get(variables.$newBreakpoints, 'tablet')) {
+        width: 100%;
+        flex-direction: row-reverse;
+      }
 
       @media (min-width: map.get(variables.$newBreakpoints, 'desktop1')) {
         justify-content: right;
@@ -260,13 +285,36 @@
         align-items: flex-end;
       }
 
-      .button {
+      .applePayAndGooglePayButtonsGroup {
+        width: 100%;
+        flex-grow: 1;
+
         @media (min-width: map.get(variables.$newBreakpoints, 'desktop1')) {
+          width: initial;
+          flex-grow: initial;
+          margin-bottom: functions.map-deep-get(variables.$margins, 'desktop1', 4);
+        }
+
+        @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
+          margin-bottom: functions.map-deep-get(variables.$margins, 'desktop2', 5);
+        }
+
+        & > * {
+          flex-grow: 1;
+        }
+      }
+
+      .button {
+        width: 100%;
+
+        @media (min-width: map.get(variables.$newBreakpoints, 'desktop1')) {
+          width: 200px;
           margin-bottom: functions.map-deep-get(variables.$margins, 'desktop1', 4);
         }
 
         @media (min-width: map.get(variables.$newBreakpoints, 'desktop2')) {
           height: 100px;
+          width: 275px;
           margin-bottom: functions.map-deep-get(variables.$margins, 'desktop2', 5);
         }
       }

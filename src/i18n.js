@@ -26,7 +26,7 @@ i18next
               inputPlaceholder: 'Імʼя'
             },
             email: {
-              label: 'Ваш електронна пошта',
+              label: 'Ваша електронна пошта',
               inputPlaceholder: 'Електронна пошта'
             },
             amount: {
@@ -47,7 +47,8 @@ i18next
             },
             currencySign: '$',
             donateButton: 'Підтримати',
-            loadingButton: 'Обробка'
+            loadingButton: 'Обробка',
+            loadingTitle: 'Обробка платежу...'
           },
           validationMessages: {
             tooShort: 'Закоротке значення',
@@ -66,6 +67,9 @@ i18next
               emptyCVC: 'Це поле є обовʼязковим',
               invalidCVC: 'Недійсний rод безпеки'
             }
+          },
+          googlePay: {
+            totalPriceLabel: 'Разом'
           },
           paymentResult: {
             paymentIdTitle: 'Ідентифікатор платежу:',
@@ -109,7 +113,8 @@ i18next
             },
             currencySign: '$',
             donateButton: 'Donate',
-            loadingButton: 'Processing'
+            loadingButton: 'Processing',
+            loadingTitle: 'Payment processing...'
           }
         },
         validationMessages: {
@@ -129,6 +134,9 @@ i18next
             emptyCVC: 'This field is marked as required',
             invalidCVC: 'The security code is invalid'
           }
+        },
+        googlePay: {
+          totalPriceLabel: 'Total'
         },
         paymentResult: {
           paymentIdTitle: 'Payment ID:',

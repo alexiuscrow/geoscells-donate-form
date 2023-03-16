@@ -13,6 +13,7 @@ body {
 
   &:focus-visible {
     outline: variables.$colorGeoGreen solid medium;
+    border-radius: variables.$borderRadius;
   }
 }
 
