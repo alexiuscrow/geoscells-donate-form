@@ -44,11 +44,14 @@ const FormWrapper = () => {
         return errors;
       }}>
       {() => (
-        <Form getCardNumberProps={getCardNumberProps} getExpiryDateProps={getExpiryDateProps} getCVCProps={getCVCProps}/>
+        <Form
+          getCardNumberProps={getCardNumberProps}
+          getExpiryDateProps={getExpiryDateProps}
+          getCVCProps={getCVCProps}
+        />
       )}
     </Formik>
   );
-
 };
 
 FormWrapper.propTypes = {};

@@ -25,7 +25,8 @@ class FakeService {
     const isLongReason = Math.random() >= 0.5;
 
     if (isLongReason) {
-      return '400: Detailed reason example with a long msg. The payment request was invalid. ' +
+      return (
+        '400: Detailed reason example with a long msg. The payment request was invalid. ' +
         'Please check the request parameters and try again. The payment request was invalid. ' +
         'Please check the request parameters and try again. The payment request was invalid. ' +
         'Please check the request parameters and try again. The payment request was invalid. ' +
@@ -39,7 +40,8 @@ class FakeService {
         'Please check the request parameters and try again. The payment request was invalid. ' +
         'Please check the request parameters and try again. The payment request was invalid. ' +
         'Please check the request parameters and try again. The payment request was invalid. ' +
-        'Please check the request parameters and try again. The payment request was invalid.';
+        'Please check the request parameters and try again. The payment request was invalid.'
+      );
     } else {
       return '402: Suspicious fraud';
     }

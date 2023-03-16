@@ -34,19 +34,15 @@ const PaymentResultNotification = ({paymentId, paymentStatus, secondaryInfo, onC
   return (
     <div className={style.container}>
       <div className={style.content}>
-        <div className={style.iconWrapper}>
-          {iconJsx}
-        </div>
+        <div className={style.iconWrapper}>{iconJsx}</div>
         <div className={style.titleWrapper}>
-          <h1 className={style.title}>
-            {title}
-          </h1>
+          <h1 className={style.title}>{title}</h1>
         </div>
-        <div className={style.paymentId}>
-          {`${t('paymentResult.paymentIdTitle')} ${paymentId}`}
-        </div>
+        <div className={style.paymentId}>{`${t('paymentResult.paymentIdTitle')} ${paymentId}`}</div>
         {secondaryInfoWrapper}
-        <Button onClick={onClickOk} className={style.button}>{buttonTitle}</Button>
+        <Button onClick={onClickOk} className={style.button}>
+          {buttonTitle}
+        </Button>
       </div>
     </div>
   );
