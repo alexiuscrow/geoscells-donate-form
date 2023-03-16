@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import style from './PaymentResultNotification.module.scss';
-import {ReactComponent as SuccessIcon} from './icons/success.svg';
-import {ReactComponent as ErrorIcon} from './icons/error.svg';
+import SuccessIcon from './icons/SuccessIcon';
+import ErrorIcon from './icons/ErrorIcon';
 import {useTranslation} from 'react-i18next';
 import Button from '../../../Button';
 
