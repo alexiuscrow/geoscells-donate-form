@@ -115,38 +115,38 @@ i18next
             donateButton: 'Donate',
             loadingButton: 'Processing',
             loadingTitle: 'Payment processing...'
-          }
-        },
-        validationMessages: {
-          tooShort: 'Too short',
-          tooLong: 'Too long',
-          required: 'This field is marked as required',
-          positive: 'The value should be positive',
-          invalidEmail: 'Invalid email',
-          paymentInputs: {
-            emptyCardNumber: 'This field is marked as required',
-            invalidCardNumber: 'Invalid card number',
-            emptyExpiryDate: 'This field is marked as required',
-            monthOutOfRange: 'The expiration month must be between 01 and 12',
-            yearOutOfRange: 'Expiration year cannot be in the past',
-            dateOutOfRange: 'The expiration date cannot be in the past',
-            invalidExpiryDate: 'The expiration date is invalid',
-            emptyCVC: 'This field is marked as required',
-            invalidCVC: 'The security code is invalid'
-          }
-        },
-        googlePay: {
-          totalPriceLabel: 'Total'
-        },
-        paymentResult: {
-          paymentIdTitle: 'Payment ID:',
-          success: {
-            title: 'Payment sent',
-            buttonTitle: 'Back to form'
           },
-          error: {
-            title: 'Payment failed',
-            buttonTitle: 'Back to form'
+          validationMessages: {
+            tooShort: 'Too short',
+            tooLong: 'Too long',
+            required: 'This field is marked as required',
+            positive: 'The value should be positive',
+            invalidEmail: 'Invalid email',
+            paymentInputs: {
+              emptyCardNumber: 'This field is marked as required',
+              invalidCardNumber: 'Invalid card number',
+              emptyExpiryDate: 'This field is marked as required',
+              monthOutOfRange: 'The expiration month must be between 01 and 12',
+              yearOutOfRange: 'Expiration year cannot be in the past',
+              dateOutOfRange: 'The expiration date cannot be in the past',
+              invalidExpiryDate: 'The expiration date is invalid',
+              emptyCVC: 'This field is marked as required',
+              invalidCVC: 'The security code is invalid'
+            }
+          },
+          googlePay: {
+            totalPriceLabel: 'Total'
+          },
+          paymentResult: {
+            paymentIdTitle: 'Payment ID:',
+            success: {
+              title: 'Payment sent',
+              buttonTitle: 'Back to form'
+            },
+            error: {
+              title: 'Payment failed',
+              buttonTitle: 'Back to form'
+            }
           }
         }
       }
