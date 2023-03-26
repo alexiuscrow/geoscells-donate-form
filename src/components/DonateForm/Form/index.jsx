@@ -56,16 +56,17 @@ const Form = ({getCardNumberProps, getExpiryDateProps, getCVCProps}) => {
   const processPayment = useCallback(
     async (paymentMethod, payload) => {
       try {
+        const formData = payload.formData;
         let paymentResult;
 
         setSubmitting(true);
 
         if (paymentMethod === Form.paymentMethods.GOOGLE_PAY) {
-          paymentResult = await FakeService.makeRequest(payload);
+          paymentResult = await FakeService.makeRequest(formData);
         } else if (paymentMethod === Form.paymentMethods.APPLE_PAY) {
-          paymentResult = await FakeService.makeRequest(payload);
+          paymentResult = await FakeService.makeRequest(formData);
         } else {
-          paymentResult = await FakeService.makeRequest(payload);
+          paymentResult = await FakeService.makeRequest(formData);
         }
 
         setPaymentId(paymentResult.paymentId);
@@ -81,7 +82,7 @@ const Form = ({getCardNumberProps, getExpiryDateProps, getCVCProps}) => {
     [setSubmitting]
   );
 
-  const onClickPayButton = useCallback(() => {
+  const onClickPayButton = useCallback(async () => {
     if (!dirty || !isValid) {
       setTouched(
         {
@@ -100,7 +101,8 @@ const Form = ({getCardNumberProps, getExpiryDateProps, getCVCProps}) => {
     const payload = {
       formData: values
     };
-    processPayment(Form.paymentMethods.CARD, payload);
+
+    await processPayment(Form.paymentMethods.CARD, payload);
   }, [dirty, isValid, processPayment, setTouched, values]);
 
   const onClickAppleOrGoogleButtonHandler = useCallback(
@@ -145,26 +147,38 @@ const Form = ({getCardNumberProps, getExpiryDateProps, getCVCProps}) => {
     [setTouched, dirty, errors]
   );
 
-  const onLoadGooglePaymentData = useCallback(
-    paymentData => {
+  const onClickGoogleButtonHandler = useCallback(
+    async event => {
+      onClickAppleOrGoogleButtonHandler(event);
+
+      if (event.defaultPrevented) {
+        return;
+      }
+
       const payload = {
-        formData: values,
-        paymentData
+        formData: values
       };
-      processPayment(Form.paymentMethods.GOOGLE_PAY, payload);
+
+      await processPayment(Form.paymentMethods.GOOGLE_PAY, payload);
     },
-    [processPayment, values]
+    [onClickAppleOrGoogleButtonHandler, processPayment, values]
   );
 
-  const onLoadApplePaymentData = useCallback(
-    paymentData => {
+  const onClickAppleButtonHandler = useCallback(
+    async event => {
+      onClickAppleOrGoogleButtonHandler(event);
+
+      if (event.defaultPrevented) {
+        return;
+      }
+
       const payload = {
-        formData: values,
-        paymentData
+        formData: values
       };
-      processPayment(Form.paymentMethods.APPLE_PAY, payload);
+
+      await processPayment(Form.paymentMethods.APPLE_PAY, payload);
     },
-    [processPayment, values]
+    [onClickAppleOrGoogleButtonHandler, processPayment, values]
   );
 
   const [cardFocus, setCardFocus] = useState(null);
@@ -402,16 +416,8 @@ const Form = ({getCardNumberProps, getExpiryDateProps, getCVCProps}) => {
                 </div>
                 <div className={style.buttonWrapper}>
                   <div className={style.applePayAndGooglePayButtonsGroup}>
-                    <ApplePayButton
-                      donationAmount={values.amount || 0}
-                      onClick={onClickAppleOrGoogleButtonHandler}
-                      onLoadPaymentData={onLoadApplePaymentData}
-                    />
-                    <GooglePayButton
-                      donationAmount={values.amount || 0}
-                      onClick={onClickAppleOrGoogleButtonHandler}
-                      onLoadPaymentData={onLoadGooglePaymentData}
-                    />
+                    <ApplePayButton onClick={onClickAppleButtonHandler} />
+                    <GooglePayButton onClick={onClickGoogleButtonHandler} />
                   </div>
                   <Button
                     className={style.button}
